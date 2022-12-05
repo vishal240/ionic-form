@@ -9,6 +9,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class HomePage {
   items: FormArray;
   orderForm: FormGroup;
+  isSubmitted: boolean = false;
   constructor(private formBuilder: FormBuilder) {
   }
   get orderFormControl(): FormArray {
@@ -36,6 +37,11 @@ export class HomePage {
     });
   }
   onSubmit(){
-    console.log(this.items.value)
+    if(this.items.invalid){
+      this.isSubmitted = true;
+      return;
+    } else {
+      console.log(this.items.value)
+    }
   }
 }

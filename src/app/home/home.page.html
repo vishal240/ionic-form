@@ -23,6 +23,12 @@
                 <ion-label position="floating">Name <span style="color: red;">*</span></ion-label>
                 <ion-input formControlName="name" type="text"></ion-input>
               </ion-item>
+              <span class="error ion-padding" *ngIf="(isSubmitted) && orderForm.get('items')['controls'][i].controls.name.errors?.required" >
+                Name is required.
+              </span>
+              <span class="error ion-padding" *ngIf="(isSubmitted) && orderForm.get('items')['controls'][i].controls.name.errors?.minlength">
+                Name should be min 3 chars long.
+              </span>
             </ion-col>
             <ion-col size="12">
               <ion-item fill="outline">
@@ -59,7 +65,7 @@
           </ion-button>
         </ion-col>
         <ion-col size="12" *ngIf="items.value.length>0">
-          <ion-button (click)="onSubmit()" [disabled]="items.invalid" >
+          <ion-button (click)="onSubmit()" >
             Submit
           </ion-button>
         </ion-col>
