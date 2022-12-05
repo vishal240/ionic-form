@@ -25,7 +25,10 @@
     "@capacitor/keyboard": "4.1.0",
     "@capacitor/status-bar": "4.1.1",
     "@ionic/angular": "^6.1.9",
+    "@ng-dynamic-forms/core": "^16.0.0",
+    "@ng-dynamic-forms/ui-ionic": "^16.0.0",
     "ionicons": "^6.0.3",
+    "ngx-mask": "^14.2.4",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
