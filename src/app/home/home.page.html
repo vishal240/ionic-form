@@ -19,31 +19,52 @@
         <div [formGroupName]="i">
           <ion-row>
             <ion-col size="12">
-              <ion-item fill="outline">
+              <ion-text color="danger" *ngIf="(isSubmitted) && orderForm.get('items')['controls'][i].controls.name.errors?.required">
+                Name is required.
+              </ion-text>
+              <ion-text color="danger" *ngIf="(isSubmitted) && orderForm.get('items')['controls'][i].controls.name.errors?.minlength">
+                Name should be min 3 chars long.
+              </ion-text>
+              <ion-item fill="outline" style="margin-top: 10px;">
                 <ion-label position="floating">Name <span style="color: red;">*</span></ion-label>
                 <ion-input formControlName="name" type="text"></ion-input>
               </ion-item>
-              <span class="error ion-padding" *ngIf="(isSubmitted) && orderForm.get('items')['controls'][i].controls.name.errors?.required" >
-                Name is required.
-              </span>
-              <span class="error ion-padding" *ngIf="(isSubmitted) && orderForm.get('items')['controls'][i].controls.name.errors?.minlength">
-                Name should be min 3 chars long.
-              </span>
             </ion-col>
             <ion-col size="12">
-              <ion-item fill="outline">
+              <ion-text color="danger" *ngIf="(isSubmitted) && orderForm.get('items')['controls'][i].controls.email.errors?.required">
+                Email is required.
+              </ion-text>
+              <ion-text color="danger" *ngIf="(isSubmitted) && orderForm.get('items')['controls'][i].controls.email.errors?.pattern">
+                Valid Email is required.
+              </ion-text>
+              <ion-item fill="outline" style="margin-top: 10px;">
                 <ion-label position="floating">E-Mail <span style="color: red;">*</span></ion-label>
                 <ion-input formControlName="email" type="text"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col size="12">
-              <ion-item fill="outline">
+              <ion-text color="danger" *ngIf="(isSubmitted) && orderForm.get('items')['controls'][i].controls.address.errors?.required">
+                Address is required.
+              </ion-text>
+              <ion-text color="danger" *ngIf="(isSubmitted) && orderForm.get('items')['controls'][i].controls.address.errors?.minlength">
+                Address should be min 5 chars long.
+              </ion-text>
+              <ion-item fill="outline" style="margin-top: 10px;">
                 <ion-label position="floating">Address <span style="color: red;">*</span></ion-label>
                 <ion-input formControlName="address" type="text"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col size="12">
-              <ion-item fill="outline">
+              <ion-text color="danger" *ngIf="(isSubmitted) && orderForm.get('items')['controls'][i].controls.phone.errors?.required">
+                Phone is required.
+              </ion-text>
+              <ion-text color="danger" *ngIf="(isSubmitted) && orderForm.get('items')['controls'][i].controls.phone.errors?.minlength">
+                Phone should be only 10 chars.
+              </ion-text>
+              <ion-text color="danger" *ngIf="(isSubmitted) && orderForm.get('items')['controls'][i].controls.phone.errors?.maxlength">
+                Phone should be only 10 chars.
+              </ion-text>
+              <ion-item fill="outline" style="margin-top: 10px;">
                 <ion-label position="floating">Phone <span style="color: red;">*</span></ion-label>
                 <ion-input formControlName="phone" type="text"></ion-input>
               </ion-item>
