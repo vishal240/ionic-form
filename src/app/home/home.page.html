@@ -12,7 +12,7 @@
       <ion-title size="large">Dynamic Forms</ion-title>
     </ion-toolbar>
   </ion-header>
-
+  <h1 class="some">User</h1>
   <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
     <ion-grid fixed>
       <div formArrayName="items" *ngFor="let item of orderFormControl.controls; let i = index;let last = last;">

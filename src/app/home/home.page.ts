@@ -10,7 +10,11 @@ export class HomePage {
   items: FormArray;
   orderForm: FormGroup;
   isSubmitted: boolean = false;
+  title: string = 'Vishal';
   constructor(private formBuilder: FormBuilder) {
+  }
+  sum(a, b) {
+    return a+b;
   }
   get orderFormControl(): FormArray {
     return this.orderForm.get("items") as FormArray;
