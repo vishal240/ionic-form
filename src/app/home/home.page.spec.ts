@@ -32,7 +32,33 @@ describe('HomePage', () => {
   })
 
   it('should be testing html', () => {
+    const dataService = jasmine.createSpyObj('log', ['data']);
     const data = fixture.nativeElement;
     expect(data.querySelector(".some").textContent).toContain('User');
   })
 });
+
+// .htaccess start
+
+// Options -MultiViews
+
+// RewriteEngine On
+
+// RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-f
+
+// RewriteRule ^ index.html [QSA,L]
+
+// <FilesMatch "\.(html?|txt|css|js|php|pl)$">
+
+//     SetOutputFilter DEFLATE
+
+//  </FilesMatch>
+
+// # php -- BEGIN cPanel-generated handler, do not edit
+// # Set the “ea-php74” package as the default “PHP” programming language.
+// <IfModule mime_module>
+//   AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+// </IfModule>
+// # php -- END cPanel-generated handler, do not edit
+
+// .htaccess end
